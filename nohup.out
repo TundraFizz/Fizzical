@@ -1,0 +1,240 @@
+Starting subprocess with file monitor
+-------------------- Restarting --------------------
+-------------------- Restarting --------------------
+-------------------- Restarting --------------------
+-------------------- Restarting --------------------
+-------------------- Restarting --------------------
+Traceback (most recent call last):
+  File "/home/ec2-user/py/bin/pserve", line 11, in <module>
+    load_entry_point('pyramid', 'console_scripts', 'pserve')()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/scripts/pserve.py", line 60, in main
+    return command.run()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/scripts/pserve.py", line 371, in run
+    global_conf=vars)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/scripts/pserve.py", line 406, in loadapp
+    return loadapp(app_spec, name=name, relative_to=relative_to, **kw)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/paste/deploy/loadwsgi.py", line 247, in loadapp
+    return loadobj(APP, uri, name=name, **kw)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/paste/deploy/loadwsgi.py", line 272, in loadobj
+    return context.create()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/paste/deploy/loadwsgi.py", line 710, in create
+    return self.object_type.invoke(self)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/paste/deploy/loadwsgi.py", line 146, in invoke
+    return fix_call(context.object, context.global_conf, **context.local_conf)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/paste/deploy/util.py", line 55, in fix_call
+    val = callable(*args, **kw)
+  File "/home/ec2-user/fizzical/fizzical/__init__.py", line 10, in main
+    config.scan()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/config/__init__.py", line 976, in scan
+    ignore=ignore)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/venusian/__init__.py", line 205, in scan
+    __import__(modname)
+  File "/home/ec2-user/fizzical/fizzical/views.py", line 20
+    <tr>
+    ^
+IndentationError: unexpected indent
+Starting subprocess with file monitor
+2016-09-23 22:36:18,166 ERROR [waitress:341][waitress] Exception when serving /
+Traceback (most recent call last):
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/task.py", line 399, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 236, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 211, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/tweens.py", line 62, in excview_tween
+    reraise(*attrs['exc_info'])
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/compat.py", line 148, in reraise
+    raise value
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/tweens.py", line 22, in excview_tween
+    response = handler(request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 158, in handle_request
+    view_name
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/view.py", line 547, in _call_view
+    response = view_callable(context, request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/viewderivers.py", line 442, in rendered_view
+    result = view(context, request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/viewderivers.py", line 147, in _requestonly_view
+    response = view(request)
+  File "/home/ec2-user/fizzical/fizzical/views.py", line 20, in view_index
+    cur.execute(sql)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/connections.py", line 835, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/connections.py", line 1019, in _read_query_result
+    result.read()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/connections.py", line 1302, in read
+    first_packet = self.connection._read_packet()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/connections.py", line 981, in _read_packet
+    packet.check_error()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'BY fish_chips ASC' at line 1")
+2016-09-23 22:36:19,073 ERROR [waitress:341][waitress] Exception when serving /
+Traceback (most recent call last):
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/task.py", line 399, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 236, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 211, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/tweens.py", line 62, in excview_tween
+    reraise(*attrs['exc_info'])
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/compat.py", line 148, in reraise
+    raise value
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/tweens.py", line 22, in excview_tween
+    response = handler(request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 158, in handle_request
+    view_name
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/view.py", line 547, in _call_view
+    response = view_callable(context, request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/viewderivers.py", line 442, in rendered_view
+    result = view(context, request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/viewderivers.py", line 147, in _requestonly_view
+    response = view(request)
+  File "/home/ec2-user/fizzical/fizzical/views.py", line 20, in view_index
+    cur.execute(sql)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/connections.py", line 835, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/connections.py", line 1019, in _read_query_result
+    result.read()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/connections.py", line 1302, in read
+    first_packet = self.connection._read_packet()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/connections.py", line 981, in _read_packet
+    packet.check_error()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'BY fish_chips ASC' at line 1")
+2016-09-24 15:46:30,555 ERROR [waitress:341][waitress] Exception when serving /
+Traceback (most recent call last):
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/task.py", line 399, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 236, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 211, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/tweens.py", line 62, in excview_tween
+    reraise(*attrs['exc_info'])
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/compat.py", line 148, in reraise
+    raise value
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/tweens.py", line 22, in excview_tween
+    response = handler(request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 158, in handle_request
+    view_name
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/view.py", line 547, in _call_view
+    response = view_callable(context, request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/viewderivers.py", line 465, in rendered_view
+    request, result, view_inst, context)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/renderers.py", line 432, in render_view
+    return self.render_to_response(response, system, request=request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/renderers.py", line 455, in render_to_response
+    result = self.render(value, system_values, request=request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/renderers.py", line 451, in render
+    result = renderer(value, system_values)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid_jinja2/__init__.py", line 264, in __call__
+    template = self.template_loader()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid_jinja2/__init__.py", line 279, in template_loader
+    return self.environment.get_template(name_with_package)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/environment.py", line 812, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/environment.py", line 786, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/environment.py", line 565, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ec2-user/fizzical/fizzical/templates/index.jinja2", line 124, in template
+    $(".tse-scrollable").TrackpadScrollEmulator({{autoHide: false });
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/environment.py", line 470, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/parser.py", line 897, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/parser.py", line 872, in subparse
+    self.stream.expect('variable_end')
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/lexer.py", line 374, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got ':'
+2016-09-24 15:46:31,609 ERROR [waitress:341][waitress] Exception when serving /
+Traceback (most recent call last):
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/waitress-1.0a2-py3.5.egg/waitress/task.py", line 399, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 236, in __call__
+    response = self.invoke_subrequest(request, use_tweens=True)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 211, in invoke_subrequest
+    response = handle_request(request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/tweens.py", line 62, in excview_tween
+    reraise(*attrs['exc_info'])
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/compat.py", line 148, in reraise
+    raise value
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/tweens.py", line 22, in excview_tween
+    response = handler(request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/router.py", line 158, in handle_request
+    view_name
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/view.py", line 547, in _call_view
+    response = view_callable(context, request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/viewderivers.py", line 465, in rendered_view
+    request, result, view_inst, context)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/renderers.py", line 432, in render_view
+    return self.render_to_response(response, system, request=request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/renderers.py", line 455, in render_to_response
+    result = self.render(value, system_values, request=request)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid/renderers.py", line 451, in render
+    result = renderer(value, system_values)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid_jinja2/__init__.py", line 264, in __call__
+    template = self.template_loader()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/pyramid_jinja2/__init__.py", line 279, in template_loader
+    return self.environment.get_template(name_with_package)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/environment.py", line 812, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/environment.py", line 786, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/environment.py", line 565, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ec2-user/fizzical/fizzical/templates/index.jinja2", line 124, in template
+    $(".tse-scrollable").TrackpadScrollEmulator({{autoHide: false });
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/environment.py", line 470, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/parser.py", line 897, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/parser.py", line 872, in subparse
+    self.stream.expect('variable_end')
+  File "/home/ec2-user/py/lib/python3.5/site-packages/jinja2/lexer.py", line 374, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got ':'
